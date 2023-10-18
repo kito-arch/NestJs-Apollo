@@ -3,16 +3,16 @@ import { Products } from './products.model';
 import { ProductsService } from './products.service';
 
 @Resolver(() => Products)
-export class BrandsResolver {
+export class ProductsResolver {
   constructor(private productsService: ProductsService) {}
   @Query((returns) => [Products])
-  getByBrandId(
+  getProductsByBrandId(
     @Args('brandId', { type: () => Int }) brandId: number,
   ): Products[] {
     return this.productsService.findByBrandId(brandId);
   }
   @Query((returns) => Products)
-  getById(@Args('id', { type: () => Int }) id: number): Products {
+  getProductById(@Args('id', { type: () => Int }) id: number): Products {
     return this.productsService.findById(id);
   }
   @Mutation((returns) => Boolean)

@@ -1,11 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Brands } from './brands.model';
 
-// interface Brands {
-//   id: number;
-//   name: string;
-// }
-
 @Injectable()
 export class BrandsService {
   private readonly brands: Brands[] = [
