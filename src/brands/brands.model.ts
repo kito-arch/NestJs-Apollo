@@ -9,6 +9,6 @@ export class Brands {
   @Field({ nullable: true })
   name?: string;
 
-  @Field((type) => [Products], { nullable: true })
+  @Field((type) => [Products], { defaultValue: [] })
   products?: Products[];
 }
